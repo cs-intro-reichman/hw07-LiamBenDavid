@@ -41,7 +41,7 @@ public class Binomial {
 		}
 		// Another base case
 		if (n == 0 || k == 0) {
-		   	memo[n][k] = 1; 
+		   	memo[n][k] = -1; 
 		   	return 1;
 		}
 		memo[n][k] = binomial(n - 1, k, memo) + binomial(n - 1, k - 1, memo);
