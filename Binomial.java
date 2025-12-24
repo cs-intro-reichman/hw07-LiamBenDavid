@@ -23,7 +23,7 @@ public class Binomial {
 
         for (int i = 0; i <= n; i++){
             for (int j = 0; j <= k; j++){
-                memo[i][j] = 1;
+                memo[i][j] = -1;  // Changed from 1 to -1
             }
         }
 		
@@ -40,8 +40,8 @@ public class Binomial {
 		   	return 0;
 		}
 		// Another base case
-		if (n == 0 || k == 0) {
-		   	memo[n][k] = -1; 
+		if (n == k || k == 0) {  
+		   	memo[n][k] = 1;  
 		   	return 1;
 		}
 		memo[n][k] = binomial(n - 1, k, memo) + binomial(n - 1, k - 1, memo);
